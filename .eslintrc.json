@@ -1,10 +1,12 @@
 {
 	"extends": [
+		"plugin:flowtype/recommended",
 		"airbnb",
 		"prettier",
 		"prettier/react"
 	],
 	"plugins": [
+		"flowtype",
 		"prettier"
 	],
   "parser": "babel-eslint",
@@ -19,6 +21,9 @@
 		"es6": true,
 		"browser": true,
 		"node": true,
-    "jest": true
+    	"jest": true
+	},
+	"rules":{
+		"linebreak-style": 0
 	}
 }

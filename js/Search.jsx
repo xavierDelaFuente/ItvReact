@@ -1,28 +1,27 @@
+// @flow
 import React, { Component } from 'react';
 import ShowCard from './ShowCard';
-import preload from '../data.json';
+import Header from './Header';
 
 class Search extends Component {
   state = {
     searchTerm: ''
   };
-  handleSearchTermChange = event => {
+  props: {
+    shows: Array<Show>
+  };
+  handleSearchTermChange = (event: SyntheticKeyboardEvent & {target: HTMLInputElement }) => {
     this.setState({ searchTerm: event.target.value });
   };
   render() {
     return (
       <div className="search">
-        <header>
-          <h1>svideo</h1>
-          <input
-            onChange={this.handleSearchTermChange}
-            value={this.state.searchTerm}
-            type="text"
-            placeholder="Search"
-          />
-        </header>
+        <Header 
+          showSearch
+          searchTerm={this.state.searchTerm} 
+          handleSearchTermChange={this.handleSearchTermChange} />
         <div>
-          {preload.shows
+          {this.props.shows
             .filter(
               show =>
                 `${show.title} ${show.description}`.toUpperCase().indexOf(this.state.searchTerm.toUpperCase()) >= 0
