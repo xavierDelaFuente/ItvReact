@@ -8,6 +8,7 @@
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:update": "jest -u",
+    "start": "NODE_ENV=server node server.js",
     "watch": "webpack --watch"
   },
   "jest": {
@@ -66,7 +67,7 @@
     "jest": "20.0.4",
     "jest-serializer-enzyme": "1.0.0",
     "moxios": "0.4.0",
-    "nodemon": "1.11.0",
+    "nodemon": "^1.17.2",
     "prettier": "1.3.1",
     "react-hot-loader": "3.0.0-beta.6",
     "react-test-renderer": "15.5.4",

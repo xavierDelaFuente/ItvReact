@@ -4,9 +4,7 @@ const webpack = require('webpack');
 module.exports = {
   context: __dirname,
   entry: [
-    'react-hot-loader/patch',
-    'webpack-dev-server/client?http://localhost:8080',
-    'webpack/hot/only-dev-server',
+    'webpack-hot-middleware/client?path=__webpack_hmr&timetout=200', 
     './js/ClientApp.jsx'
   ],
   devtool: 'cheap-eval-source-map',

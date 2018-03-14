@@ -6,9 +6,9 @@ import ShowCard from './ShowCard';
 import Header from './Header';
 
 const Search = (props: {
-                  searchTerm: string, // eslint-disable-line react/no-unused-prop-types
-                  shows: Array<Show>
-                }) => (
+  searchTerm: string, // eslint-disable-line react/no-unused-prop-types
+  shows: Array<Show>
+}) => (
   <div className="search">
     <Header showSearch />
     <div>
@@ -23,4 +23,5 @@ const mapStateToProps = state => ({
   searchTerm: state.searchTerm
 });
 
+export const Unwrapped = Search;
 export default connect(mapStateToProps)(Search);
